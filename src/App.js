@@ -1,24 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav'
+import MovieList from './components/MovieList'
+import AddMovies from './components/AddMovies'
+import {MovieProvider} from './components/MovieContext'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //the movies state will now be available on the components
+    <MovieProvider>
+        <div className="App">
+          <Nav/>
+          <MovieList/>
+          <AddMovies/>
+      </div>
+    </MovieProvider>
   );
 }
 
